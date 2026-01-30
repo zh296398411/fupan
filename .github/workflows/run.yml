@@ -1,0 +1,21 @@
+name: Bili Comment Monitor
+on:
+  schedule:
+    - cron: '*/10 * * * *' # 每10分钟检查一次
+  workflow_dispatch: # 支持手动点击运行
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run script
+        env:
+          FEISHU_URL: ${{ secrets.FEISHU_URL }}
+        run: python monitor.py
