@@ -3,7 +3,7 @@ import os
 
 # 配置
 UID = "1671203508"  # 洪洪火火复盘的UID
-FEISHU_URL = os.environ.get("FEISHU_URL") # 自动读取你刚才复制的那个地址
+FEISHU_URL = os.environ.get("https://open.feishu.cn/open-apis/bot/v2/hook/f55395ea-63e4-4d5a-9fbf-7b8d744ca0de") # 自动读取你刚才复制的那个地址
 
 def get_latest_comments():
     try:
